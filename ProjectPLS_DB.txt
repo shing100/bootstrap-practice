@@ -1,0 +1,81 @@
+CREATE TABLE `pls`.`room` (
+  `num` VARCHAR(12) NOT NULL,
+  `name` VARCHAR(20) NOT NULL,
+  `size` VARCHAR(10) NOT NULL,
+  `roomdata` VARCHAR(100) NOT NULL,
+  `picture` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`num`));
+
+CREATE TABLE `pls`.`reservation` (
+	`num`            varchar(12)      NOT NULL    ,
+	`checkin`           datetime         NOT NULL      ,
+	`checkout`          datetime         NOT NULL      ,
+	`price`             int(15)          NOT NULL      ,
+	`soldout`           boolean          NOT NULL      ,
+	PRIMARY KEY ( `num` )
+);
+
+CREATE TABLE `pls`.`member` (
+  `mem_id` varchar(12) NOT NULL,
+  `mem_passwd` varchar(20) NOT NULL,
+  `mem_name` varchar(10) NOT NULL,
+  `mem_mail` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`mem_id`)
+);
+
+CREATE TABLE `pls`.`admin` (
+	`admin_id`          varchar(12)          NOT NULL  ,
+	`admin_passwd`      varchar(20)          NULL      ,
+	PRIMARY KEY ( `admin_id` )
+);
+
+-------------------------------------------------------------
+
+pls호텔
+
+객실테이블
+
+객실번호, 객실이름, 객실크기, 객실정보, 객실사진
+
+
+회원테이블
+
+회원아이디, 비밀번호, 이름, e-mail주소
+
+
+관리자테이블
+
+관리자 아이디, 관리자 비밀번호
+
+--------------------------------------------------------------
+
+사용자 페이지
+
+메인페이지 index.jsp
+	   footer.jsp
+	   header.jsp
+
+로그인처리 LoginProc.jsp
+로그아웃 처리 Logout.jsp
+로그인에러 LogError.jsp
+
+회원가입 register.jsp
+회원가입처리  Memberinsert.jsp
+중복확인 IdCheck.jsp
+
+세부페이지  aboutus.jsp
+	    (room.jsp, reservation.jsp, resercheck.jsp)
+	    contact.jsp
+	    notice.jsp
+
+관리자
+
+admin/index.jsp
+admin/footer.jsp
+admin/header.jsp
+admin/member.jsp
+admin/MemberUpdate.jsp
+admin/MemberUpdateProc.jsp
+admin/room.jsp
+admin/AdminLoginProc.jsp
+admin/AdminLogout.jsp
